@@ -9,18 +9,18 @@ export default function TabLayout() {
   const screens = [
     {
       name: 'index',
-      title: 'rooms',
+      title: 'dashboard',
       icon: 'LayoutDashboard' as const,
     },
     {
-      name: 'list-attend',
-      title: 'list attend',
+      name: 'history',
+      title: 'history',
       icon: 'List' as const,
     },
     {
-      name: 'meetings-online',
-      title: 'online',
-      icon: 'Waypoints' as const,
+      name: 'settings',
+      title: 'settings',
+      icon: 'Cog' as const,
     },
   ]
 

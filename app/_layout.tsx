@@ -36,31 +36,17 @@ const queryClient = new QueryClient({
 SplashScreen.preventAutoHideAsync()
 
 const screens = [
-  '(drawer)',
-  'project',
-  'profile',
-  'notifications',
-  'phases/[id]',
-  'rooms/[id]',
-  'meetings/[id]',
+  '(tabs)',
 ]
 
 const authenScreens = [
   'login',
   'register',
-  'locked',
   'forgot-password',
-  'verify-login-2fa',
 ]
 
 const modalScreens = [
-  '(modals)/comment-modal',
-  '(modals)/create-edit-room',
-  '(modals)/create-edit-meeting',
-  '(modals)/create-edit-meeting-online',
-  '(modals)/create-edit-leave-request',
-  '(modals)/create-edit-overtime-report',
-  '(modals)/create-edit-timesheet',
+  '(modals)/create-edit-expense',
 ]
 
 export default function RootLayout() {
@@ -99,44 +85,31 @@ export default function RootLayout() {
                   }
                 }}
               >
-                <Stack.Protected guard={isLoggedIn && userData?.status === true}>
-                  {screens.map((screen) => (
-                    <Stack.Screen
-                      key={screen}
-                      name={screen}
-                      options={{
-                        headerShown: false,
-                      }} />
-                  ))}
-
-                  {modalScreens.map((screen) => (
-                    <Stack.Screen
-                      key={screen}
-                      name={screen}
-                      options={{
-                        headerShown: false,
-                        presentation: 'transparentModal',
-                        animation: 'fade_from_bottom',
-                        contentStyle: {
-                          backgroundColor: 'transparent',
-                        },
-                      }}
-                    />
-                  ))}
-                </Stack.Protected>
-
-                <Stack.Protected guard={isLoggedIn && userData?.status !== true}>
+                {screens.map((screen) => (
                   <Stack.Screen
-                    name='approval-request'
+                    key={screen}
+                    name={screen}
                     options={{
                       headerShown: false,
+                    }} />
+                ))}
+
+                {modalScreens.map((screen) => (
+                  <Stack.Screen
+                    key={screen}
+                    name={screen}
+                    options={{
+                      headerShown: false,
+                      presentation: 'transparentModal',
+                      animation: 'fade_from_bottom',
                       contentStyle: {
-                        paddingTop: insets.top,
-                        backgroundColor: darkMode ? '#0D0A18' : 'FFFFFF',
-                      }
+                        backgroundColor: 'transparent',
+                      },
                     }}
                   />
-                </Stack.Protected>
+                ))}
+
+
 
                 <Stack.Protected guard={!isLoggedIn}>
                   {authenScreens.map((screen) => (

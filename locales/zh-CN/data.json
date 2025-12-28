@@ -579,26 +579,6 @@
   "bereavement leave": "丧假",
   "business trip": "出差",
   "late arrival": "迟到",
-  "early departure": "早退",
-  "unauthorized absence": "旷工",
-  "compensatory leave": "调休",
-  "military health check": "兵役体检",
-  "early maternity leave": "产前假",
-  "special leave": "特休假",
-  "other": "其他",
-  "long term leave": "长期请假",
-  "review pending": "审批中",
-  "list attend": "参与名单",
-  "select options": "选择选项",
-  "capacity": "容量",
-  "enter capacity": "输入容量",
-  "capacity is required": "必须填写容量",
-  "image is required": "必须提供图片",
-  "floor is required": "必须选择楼层",
-  "building is required": "必须选择大楼",
-  "room name is required": "必须填写房间名称",
-  "capacity must be greater than 0": "容量必须大于 0",
-  "please access the web interface to enable or disable two-factor authentication": "请访问 Fine Projects 网站以启用或禁用双重身份验证",
-    "meeting link is required": "会议链接是必填项",
-  "conferencing is required": "会议平台是必填项"
+  "early departure": "早退"
 }
+

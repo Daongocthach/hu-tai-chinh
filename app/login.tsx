@@ -15,7 +15,6 @@ import {
   TextInputComponent
 } from '@/components'
 
-import { showToast } from '@/alerts'
 import authenApi from '@/apis/authen.api'
 import IMAGES from '@/assets/images'
 import { LoginFormInputs } from '@/lib'
@@ -39,41 +38,10 @@ export default function Login() {
   const { mutate: login, isPending } = useMutation({
     mutationFn: (data: LoginFormInputs) => authenApi.login(data),
     onSuccess: (response) => {
-      const {
-        is_2fa_verify,
-        is_locked,
-        lock_time,
-        email,
-      } = response.data
-      if (is_locked) {
-        router.push({
-          pathname: '/locked',
-          params: {
-            email: email,
-            lock_time: lock_time,
-          },
-        })
-      } else if (is_2fa_verify) {
-        router.push({
-          pathname: '/verify-login-2fa',
-          params: { email: response.data.email },
-        })
-      } else {
-        signIn(response.data)
-        showToast('login_success')
-        router.replace('/')
-      }
     },
     onError: (error: AxiosError<any>) => {
       const res = error.response?.data
       if (!res) return
-
-      if (res.data?.is_locked) {
-        router.push({
-          pathname: '/locked',
-          params: res.data,
-        })
-      }
     }
   })
 
