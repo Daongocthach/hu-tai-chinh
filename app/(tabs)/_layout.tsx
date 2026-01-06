@@ -9,12 +9,12 @@ export default function TabLayout() {
   const screens = [
     {
       name: 'index',
-      title: 'dashboard',
+      title: 'home',
       icon: 'LayoutDashboard' as const,
     },
     {
-      name: 'history',
-      title: 'history',
+      name: 'analytics',
+      title: 'analytics',
       icon: 'List' as const,
     },
     {

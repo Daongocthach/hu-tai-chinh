@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 import { addMinutes, differenceInMinutes, parse, set, setMilliseconds, setSeconds } from 'date-fns'
 import * as FileSystem from 'expo-file-system'
 import * as ImageManipulator from 'expo-image-manipulator'
-import { FileProps, User } from '../types'
+import { FileProps } from '../types'
 
 export const getShortName = (fullName: string | undefined) => {
   if (!fullName) return "??"
@@ -295,12 +295,6 @@ export const arrayParamsSerializer = (params: { [x: string]: any, hasOwnProperty
   }
 
   return parts.join('&')
-}
-
-export const getDistinctUsers = (users?: User[]) => {
-  if (!users) return []
-
-  return [...new Map(users.map((user) => [user.id, user])).values()]
 }
 
 export function calculateWorkingHours(

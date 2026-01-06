@@ -2,14 +2,12 @@ import { Image, View } from 'react-native'
 
 import { useTheme } from '@/hooks'
 import { getShortName } from '@/lib/utils'
-import useStore from '@/store'
 import TextComponent from './text-component'
 
 export default function UserAvatar({
   avatarSize = 50,
   avatarUrl = '',
   userName = '',
-  isMe = false,
   avatarColor,
   notShortName = false,
 }: {
@@ -21,8 +19,7 @@ export default function UserAvatar({
   notShortName?: boolean
 }) {
   const { colors } = useTheme()
-  const { userData } = useStore()
-  const shortName = notShortName ? userName ?? '' : getShortName(isMe ? userData?.full_name : (userName ?? ''))
+  const shortName = notShortName ? userName ?? '' : getShortName(userName ?? '')
 
   if (avatarUrl) {
     return (
@@ -33,20 +30,6 @@ export default function UserAvatar({
           height: avatarSize,
           borderRadius: avatarSize / 2,
           backgroundColor: colors.primaryContainer,
-        }}
-        resizeMode="cover"
-      />
-    )
-  }
-  if (isMe && userData?.avatar) {
-    return (
-      <Image
-        source={{ uri: userData.avatar }}
-        style={{
-          width: avatarSize,
-          height: avatarSize,
-          borderRadius: avatarSize / 2,
-          backgroundColor: colors.primary,
         }}
         resizeMode="cover"
       />

@@ -3,17 +3,16 @@ import { useFonts } from 'expo-font'
 import { Stack, useRouter } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { I18nextProvider } from 'react-i18next'
 import { GestureHandlerRootView } from 'react-native-gesture-handler'
 import 'react-native-reanimated'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Toast from 'react-native-toast-message'
 
 import { LoadingScreen } from '@/components'
 import { GlobalAlertProvider } from '@/contexts/global-alert-provider'
 import { ThemeProvider } from '@/contexts/theme-provider'
-import { useSocket } from '@/hooks'
+import { initDatabase } from '@/database/init-db'
 import { FONT_FAMILIES } from '@/lib/constants'
 import i18next from '@/locales'
 import useStore from '@/store'
@@ -39,35 +38,37 @@ const screens = [
   '(tabs)',
 ]
 
-const authenScreens = [
-  'login',
-  'register',
-  'forgot-password',
-]
-
 const modalScreens = [
-  '(modals)/create-edit-expense',
 ]
 
 export default function RootLayout() {
-  useSocket()
-  const { darkMode, isLoggedIn, userData } = useStore()
+  const { darkMode } = useStore()
   const router = useRouter()
-  const insets = useSafeAreaInsets()
   const [loaded] = useFonts({
     [FONT_FAMILIES.REGULAR]: require('../assets/fonts/Poppins-Regular.ttf'),
     [FONT_FAMILIES.MEDIUM]: require('../assets/fonts/Poppins-Medium.ttf'),
     [FONT_FAMILIES.SEMIBOLD]: require('../assets/fonts/Poppins-SemiBold.ttf'),
     [FONT_FAMILIES.BOLD]: require('../assets/fonts/Poppins-Bold.ttf'),
   })
+  const [dbReady, setDbReady] = useState(false)
 
   useEffect(() => {
-    if (loaded) {
+    const bootstrap = async () => {
+      await initDatabase()
+      console.log('Database initialized')
+      setDbReady(true)
+    }
+
+    bootstrap()
+  }, [])
+
+  useEffect(() => {
+    if (loaded && dbReady) {
       SplashScreen.hideAsync()
     }
-  }, [loaded, router])
+  }, [loaded, dbReady])
 
-  if (!loaded) {
+  if (!loaded || !dbReady) {
     return <LoadingScreen />
   }
 
@@ -94,37 +95,6 @@ export default function RootLayout() {
                     }} />
                 ))}
 
-                {modalScreens.map((screen) => (
-                  <Stack.Screen
-                    key={screen}
-                    name={screen}
-                    options={{
-                      headerShown: false,
-                      presentation: 'transparentModal',
-                      animation: 'fade_from_bottom',
-                      contentStyle: {
-                        backgroundColor: 'transparent',
-                      },
-                    }}
-                  />
-                ))}
-
-
-
-                <Stack.Protected guard={!isLoggedIn}>
-                  {authenScreens.map((screen) => (
-                    <Stack.Screen
-                      key={screen}
-                      name={screen}
-                      options={{
-                        headerShown: false,
-                        contentStyle: {
-                          paddingTop: insets.top,
-                          backgroundColor: darkMode ? '#0D0A18' : 'FFFFFF',
-                        }
-                      }}
-                    />))}
-                </Stack.Protected>
 
               </Stack>
               <Toast />

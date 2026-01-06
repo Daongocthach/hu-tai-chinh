@@ -54,60 +54,8 @@ export { default as UserAvatar } from "@/components/common/user-avatar"
 export { default as UsersTagged } from "@/components/common/users-tagged"
 export { default as WaveBackground } from "@/components/common/wave-background"
 
-export { default as ChangeCompanyLogo } from "@/components/authentication/change-company-logo"
-export { default as HeaderAuthentication } from "@/components/authentication/header-authentication"
-export { default as OtpInput } from "@/components/authentication/otp-input"
-export { default as Overview } from "@/components/authentication/over-view"
-
-export { default as ProjectCard } from "@/components/my-projects/project-card"
-export { default as MyApprovalCard } from "@/components/my-projects/project/my-approval-card"
-export { default as TaskCard } from "@/components/my-projects/project/task-card"
-export { default as ProjectsFilter } from "@/components/my-projects/projects-filter"
-export { default as ProjectsTasksFilter } from "@/components/my-projects/projects-tasks-filter"
-
-export { default as MemberCard } from "@/components/my-projects/members/member-card"
-export { default as DepartmentCard } from "@/components/my-projects/project/department-card"
-export { default as ProjectDetail } from "@/components/my-projects/project/project-detail"
-export { default as ProjectTasksCard } from "@/components/my-projects/project/project-tasks-card"
-
-export { default as ChangeAvatar } from "@/components/profile/change-avatar"
-export { default as Email } from "@/components/profile/email"
-export { default as Password } from "@/components/profile/password"
-export { default as TwoFactorAuthentication } from "@/components/profile/two-factor-authentication"
-export { default as UserDetail } from "@/components/profile/user-detail"
-
-export { default as CompanyItem } from "@/components/drawer/company-item"
-export { default as DrawerItemComponent } from "@/components/drawer/drawer-item-component"
-export { default as DrawerSection } from "@/components/drawer/drawer-section"
-
-export { default as AllNotifications } from "@/components/notifications/all-notifications"
-export { default as Important } from "@/components/notifications/important"
-export { default as Unread } from "@/components/notifications/unread"
-
-
-export { default as MeetingRoomsFilter } from "@/components/meetings/meeting-rooms-filter"
-export { default as MeetingsOnlineFilter } from "@/components/meetings/meetings-online-filter"
-export { default as RoomCard } from "@/components/meetings/room-card"
-export { default as RoomServices } from "@/components/meetings/room-services"
-
-export { default as MeetingCard } from "@/components/meetings/meeting-card"
-
-export { default as CommentCard } from "@/components/comments/comment-card"
-export { default as DiscussionInput } from "@/components/comments/discussion-input/index"
-export { default as UserSuggestions } from "@/components/comments/discussion-input/user-suggestions"
 
 export { default as CameraCapture } from "@/components/camera/camera-capture"
 export { default as CameraModal } from "@/components/camera/camera-modal"
 export { default as CameraScan } from "@/components/camera/camera-scan"
-
-export { default as LeaveRequestCard } from "@/components/leave-requests/leave-request-card"
-export { default as LeaveRequestsFilter } from "@/components/leave-requests/leave-requests-filter"
-
-export { default as OvertimeReportCard } from "@/components/overtime-report/overtime-report-card"
-export { default as OvertimeReportsFilter } from "@/components/overtime-report/overtime-reports-filter"
-
-
-export { default as ProgressStep } from '@/components/progress-steps/progress-step'
-export { default as ProgressSteps } from '@/components/progress-steps/progress-steps'
-export { default as StepIcon } from '@/components/progress-steps/step-icon'
 
