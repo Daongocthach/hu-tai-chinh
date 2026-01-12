@@ -1,4 +1,3 @@
-import * as Linking from 'expo-linking'
 import { useEffect, useState } from 'react'
 
 import { showAlert, showToast } from '@/alerts'
@@ -51,11 +50,6 @@ export default function SettingsScreen() {
     })
   }
 
-  const handleHelp = () => {
-    showAlert('help', () => {
-      Linking.openURL('https://finepro-automation.vercel.app/contact')
-    })
-  }
 
   return (
     <Container isScroll>
@@ -78,13 +72,6 @@ export default function SettingsScreen() {
             ghost
             style={{ alignSelf: 'flex-start' }}
             onPress={handleResetSettings}
-          />
-          <ButtonComponent
-            iconProps={{ name: 'Info', color: 'secondary' }}
-            textProps={{ text: 'help' }}
-            ghost
-            style={{ alignSelf: 'flex-start' }}
-            onPress={handleHelp}
           />
           {Platform.OS === 'android' &&
             <ButtonComponent

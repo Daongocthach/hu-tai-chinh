@@ -2,34 +2,34 @@ import { AppTheme } from '../types'
 
 export const lightTheme: AppTheme = {
   colors: {
-    text: '#181623',
-    tint: '#7F64F4',
-    icon: '#666666',
+    text: '#0c1428',
+    tint: '#f471b5',
+    icon: '#94a3b8',
 
-    background: '#FFFFFF',
+    background: '#f8f6f7',
     onBackground: '#181623',
 
-    card: '#F3F1FF',
-    onCard: '#4A4A4A',
-    cardVariant: '#FAF9FE',
-    onCardVariant: '#181623',
-    cardDisabled: '#f1f5f9',
-    onCardDisabled: '#758398',
+    card: '#ffffff',
+    onCard: '#060709',
+    cardVariant: '#edeef3',
+    onCardVariant: '#707a8b',
+    cardDisabled: '#e5e7eb',
+    onCardDisabled: '#606778',
 
     outline: '#e5e7eb',
     outlineVariant: '#cbd5e1',
 
-    primary: '#7F64F4',
+    primary: '#f471b5',
     onPrimary: '#FFFFFF',
     primaryContainer: '#EDEBFF',
 
-    secondary: '#0EA5E8',
+    secondary: '#a23af6',
     onSecondary: '#ffffff',
-    secondaryContainer: '#d1ecf9',
+    secondaryContainer: '#eae2ff',
 
-    tertiary: '#DA49EF',
+    tertiary: '#f97316',
     onTertiary: '#ffffff',
-    tertiaryContainer: '#FAE4FD',
+    tertiaryContainer: '#ffe6dc',
 
     warning: '#FBBF24',
     onWarning: '#1E1B4B',
@@ -39,9 +39,9 @@ export const lightTheme: AppTheme = {
     onError: '#FFFFFF',
     errorContainer: '#FFE4E6',
 
-    success: '#10B981',
+    success: '#02e666',
     onSuccess: '#FFFFFF',
-    successContainer: '#d1fae5',
+    successContainer: '#ECFDF3',
 
     modal: '#00000044',
     shadow: '#000000',
@@ -51,50 +51,51 @@ export const lightTheme: AppTheme = {
 
 export const darkTheme: AppTheme = {
   colors: {
-    text: '#E2E0F5',
-    tint: '#8C72E8',
-    icon: '#7A7A89',
+    text: '#F5F6FA',
+    tint: '#f471b5',
+    icon: '#9CA3AF',
 
-    background: '#020207',
-    onBackground: '#E2E0F5',
+    background: '#0E0B10',
+    onBackground: '#F5F6FA',
 
-    card: '#111028',
-    onCard: '#DDD9FF',
-    cardVariant: '#1A1933',
-    onCardVariant: '#C2BDFF',
+    card: '#161218',
+    onCard: '#F5F6FA',
 
-    cardDisabled: '#191726',
-    onCardDisabled: '#86869A',
+    cardVariant: '#221C26',
+    onCardVariant: '#A1A1AA',
 
-    outline: '#1F1D2B',
-    outlineVariant: '#15141D',
+    cardDisabled: '#1F1B22',
+    onCardDisabled: '#71717A',
 
-    primary: '#8C72E8',
-    onPrimary: '#FFFFFF',
-    primaryContainer: '#1F1640',
+    outline: '#27272A',
+    outlineVariant: '#3F3F46',
 
-    secondary: '#2F95C8',
-    onSecondary: '#FFFFFF',
-    secondaryContainer: '#01141F',
+    primary: '#f471b5',
+    onPrimary: '#1F1725',
+    primaryContainer: '#3A1F2E',
 
-    tertiary: '#C85AD9',
-    onTertiary: '#FFFFFF',
-    tertiaryContainer: '#240624',
+    secondary: '#b574ff',
+    onSecondary: '#1B1026',
+    secondaryContainer: '#2A183A',
 
-    warning: '#C49C0D',
-    onWarning: '#1A163F',
-    warningContainer: '#1D1500',
+    tertiary: '#fb923c',
+    onTertiary: '#2A1605',
+    tertiaryContainer: '#2B1A10',
 
-    error: '#D44545',
-    onError: '#FFFFFF',
-    errorContainer: '#330808',
+    warning: '#FACC15',
+    onWarning: '#1F1A05',
+    warningContainer: '#2A2408',
 
-    success: '#4BAB70',
-    onSuccess: '#FFFFFF',
-    successContainer: '#062015',
+    error: '#FB7185',
+    onError: '#2A0F14',
+    errorContainer: '#33141A',
+
+    success: '#22C55E',
+    onSuccess: '#052013',
+    successContainer: '#0F2A1B',
 
     modal: '#000000CC',
-    shadow: '#ffffff',
-    ring: '#1F1D2B',
+    shadow: '#000000',
+    ring: '#f471b550',
   },
 }

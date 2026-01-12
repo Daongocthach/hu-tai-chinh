@@ -1,6 +1,6 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { useFonts } from 'expo-font'
-import { Stack, useRouter } from 'expo-router'
+import { Stack } from 'expo-router'
 import * as SplashScreen from 'expo-splash-screen'
 import { StatusBar } from 'expo-status-bar'
 import { useEffect, useState } from 'react'
@@ -43,12 +43,14 @@ const modalScreens = [
 
 export default function RootLayout() {
   const { darkMode } = useStore()
-  const router = useRouter()
   const [loaded] = useFonts({
-    [FONT_FAMILIES.REGULAR]: require('../assets/fonts/Poppins-Regular.ttf'),
-    [FONT_FAMILIES.MEDIUM]: require('../assets/fonts/Poppins-Medium.ttf'),
-    [FONT_FAMILIES.SEMIBOLD]: require('../assets/fonts/Poppins-SemiBold.ttf'),
-    [FONT_FAMILIES.BOLD]: require('../assets/fonts/Poppins-Bold.ttf'),
+    [FONT_FAMILIES.EXTRALIGHT]: require('../assets/fonts/Manrope-ExtraLight.ttf'),
+    [FONT_FAMILIES.LIGHT]: require('../assets/fonts/Manrope-Light.ttf'),
+    [FONT_FAMILIES.REGULAR]: require('../assets/fonts/Manrope-Regular.ttf'),
+    [FONT_FAMILIES.MEDIUM]: require('../assets/fonts/Manrope-Medium.ttf'),
+    [FONT_FAMILIES.SEMIBOLD]: require('../assets/fonts/Manrope-SemiBold.ttf'),
+    [FONT_FAMILIES.BOLD]: require('../assets/fonts/Manrope-Bold.ttf'),
+    [FONT_FAMILIES.EXTRABOLD]: require('../assets/fonts/Manrope-ExtraBold.ttf'),
   })
   const [dbReady, setDbReady] = useState(false)
 

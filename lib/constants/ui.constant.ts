@@ -1,8 +1,11 @@
 export const FONT_FAMILIES = {
-    REGULAR: 'Inter-Regular',
-    MEDIUM: 'Inter-Medium',
-    SEMIBOLD: 'Inter-SemiBold',
-    BOLD: 'Inter-Bold',
+    EXTRALIGHT: 'Manrope-ExtraLight',
+    LIGHT: 'Manrope-Light',
+    REGULAR: 'Manrope-Regular',
+    MEDIUM: 'Manrope-Medium',
+    SEMIBOLD: 'Manrope-SemiBold',
+    BOLD: 'Manrope-Bold',
+    EXTRABOLD: 'Manrope-ExtraBold'
 }
 
 export const FONT_SIZES = {
